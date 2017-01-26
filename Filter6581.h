@@ -30,8 +30,6 @@
 #include "Filter.h"
 #include "FilterModelConfig.h"
 
-#include "sidcxx11.h"
-
 namespace reSIDfp
 {
 
