@@ -239,11 +239,11 @@ class Integrator8580;
  * To get around this, there is an 11 input NOR gate below the DACs sensing those 11 bits.
  * If all are 0, the NOR gate gives the gate control voltage to the 12 bit DAC LSB.
  *
- *     ----------------------------
+ *     ----o---o--...--o---o---o---
  *         |   |       |   |   |
  *       Rb10 Rb9 ... Rb1 Rb0  R0
  *         |   |       |   |   |
- *     ----------------------------
+ *     ----o---o--...--o---o---o---
  *
  *
  *
@@ -266,7 +266,7 @@ class Integrator8580;
  *   +---||---o---+   +---o-----||-------o
  *   |        |   |   |   |              |
  *   o----+   |   -----   |              |
- *   |    |   |   -----   +----+   +-----+
+ *   |    |   |   -----   +----+   +-----o
  *   |    -----     |          |   |     |
  *   |    -----     |          -----     |
  *   |      |       |          -----     |
@@ -303,11 +303,7 @@ protected:
 
     /**
      * Set filter resonance.
-     *
-     * The following function for 1/Q has been modeled in the MOS 8580:
-     *
-     * 1/Q = 2^(1/2)*2^(-x/8) = 2^(1/2 - x/8) = 2^((4 - x)/8)
-     *
+	 *
      * @param res the new resonance value
      */
     void updateResonance(unsigned char res) override { currentResonance = gain_res[res]; }

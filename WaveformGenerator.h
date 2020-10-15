@@ -69,12 +69,12 @@ namespace reSIDfp
  *
  * Operation: Calculate EOR result, shift register, set bit 0 = result.
  *
- *                    reset    -------------------------------------------
+ *                    reset   +-------------------------------------------+
  *                      |     |                                           |
- *               test--OR-->EOR<--                                        |
+ *               test--OR-->EOR<--+                                       |
  *                      |         |                                       |
  *                      2 2 2 1 1 1 1 1 1 1 1 1 1                         |
- *     Register bits:   2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 <---
+ *     Register bits:   2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 <---+
  *                          |   |       |     |   |       |     |   |
  *     Waveform bits:       1   1       9     8   7       6     5   4
  *                          1   0
@@ -380,7 +380,7 @@ float WaveformGenerator::output(const WaveformGenerator* ringModulator)
         // Age floating DAC input.
         if (likely(floating_output_ttl != 0) && unlikely(--floating_output_ttl == 0))
         {
-            waveform_output = 0;
+            osc3 = waveform_output = 0;
         }
     }
 
