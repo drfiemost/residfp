@@ -179,6 +179,10 @@ public:
         kVddt(kVddt),
         n_snake(n_snake) {}
 
+    Integrator(const Integrator&) = delete; // prevent copy
+
+    Integrator &operator=(const Integrator&) = delete; // prevent assignment
+
     void setVw(unsigned short Vw) { Vddt_Vw_2 = ((kVddt - Vw) * (kVddt - Vw)) >> 1; }
 
     int solve(int vi) const;

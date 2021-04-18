@@ -101,6 +101,8 @@ private:
 
     FilterModelConfig();
     ~FilterModelConfig();
+    FilterModelConfig(const FilterModelConfig&) = delete; // prevent copy
+    FilterModelConfig &operator=(const FilterModelConfig&) = delete; // prevent assignment
 
 public:
     static FilterModelConfig* getInstance();
