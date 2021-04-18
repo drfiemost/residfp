@@ -42,7 +42,7 @@ namespace reSIDfp
  * and [VICE Bug #1128](http://sourceforge.net/p/vice-emu/bugs/1128/)
  */
 const int FLOATING_OUTPUT_TTL_6581R3 =   95000; // ~95ms
-const int FLOATING_OUTPUT_TTL_6581R4 = 1000000; // ~1s
+// const int FLOATING_OUTPUT_TTL_6581R4 = 1000000; // ~1s (unused)
 const int FLOATING_OUTPUT_TTL_8580R5 = 1000000; // ~1s
 
 /**
@@ -55,7 +55,7 @@ const int FLOATING_OUTPUT_TTL_8580R5 = 1000000; // ~1s
  * only the big difference between the old and new models.
  */
 const int SHIFT_REGISTER_RESET_6581R3 =  210000; // ~210ms
-const int SHIFT_REGISTER_RESET_6581R4 = 2150000; // ~2.15s
+// const int SHIFT_REGISTER_RESET_6581R4 = 2150000; // ~2.15s (unused)
 const int SHIFT_REGISTER_RESET_8580R5 = 2800000; // ~2.8s
 
 const int DAC_BITS = 12;
